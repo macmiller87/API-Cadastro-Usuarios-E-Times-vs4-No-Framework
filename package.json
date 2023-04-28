@@ -1,0 +1,14 @@
+{
+  "name": "API-Cadastro-Usuarios-E-Times-vs4-No-Framework",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/macmiller87/API-Cadastro-Usuarios-E-Times-vs4-No-Framework.git",
+  "author": "macmiller87 <macamagolf@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node --watch --inspect src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}
