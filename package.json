@@ -9,6 +9,8 @@
     "dev": "node --watch --inspect src/server.js"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0"
   }
 }

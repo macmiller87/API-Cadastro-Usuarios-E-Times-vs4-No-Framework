@@ -1,4 +1,5 @@
 const createUser = require("../routes/user/CreateUser");
+const userCreateLoginToken = require("../routes/user/LoginUserToken");
 
 async function handler(request, response) {
 
@@ -6,6 +7,9 @@ async function handler(request, response) {
         return createUser(request, response);
     }
 
+    if(request.url.startsWith("/loginToken") && request.method === "POST") {
+        return userCreateLoginToken(request, response);
+    }
 }
 
 module.exports = handler;
