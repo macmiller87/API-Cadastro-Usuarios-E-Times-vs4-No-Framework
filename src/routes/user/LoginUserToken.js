@@ -9,7 +9,7 @@ async function userCreateLoginToken(request, response) {
 
     const { email, password } = JSON.parse(await once(request, "data"));
 
-    const isValidUserByEmail = arrayUsers.find((item) => item.email === email);
+    const isValidUserByEmail = await arrayUsers.find((item) => item.email === email);
 
     if (isValidUserByEmail) {
 
