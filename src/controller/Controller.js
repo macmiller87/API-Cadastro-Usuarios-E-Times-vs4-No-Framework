@@ -2,6 +2,8 @@ const createUser = require("../routes/user/CreateUser");
 const userCreateLoginToken = require("../routes/user/LoginUserToken");
 const EnsureUserAuthenticate = require("../auth/EnsureUserAuthenticate");
 const getUser = require("../routes/user/GetUser");
+const getUsersAndTeams = require("../routes/user/GetUserAndTeams");
+const updateUserField = require("../routes/user/UpdateUserField");
 
 async function handler(request, response) {
 
@@ -19,6 +21,14 @@ async function handler(request, response) {
 
         if(request.url.startsWith("/getUser/") && request.method === "GET") {
             return await getUser(request, response);
+        }
+
+        if(request.url.startsWith("/getUsersAndTeams") && request.method === "GET") {
+            return getUsersAndTeams(request, response);
+        }
+
+        if(request.url.startsWith("/updateUserField/") && request.method === "PATCH") {
+            return updateUserField(request, response);
         }
 
     }
