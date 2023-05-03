@@ -24,7 +24,7 @@ async function createUser(request, response) {
 
         arrayUsers.push(user);
 
-        response.writeHead(200);
+        response.writeHead(201);
         return response.end(JSON.stringify({
             user: {
                 user_id: user.user_id,
