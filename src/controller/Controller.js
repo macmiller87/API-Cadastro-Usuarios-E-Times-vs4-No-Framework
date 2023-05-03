@@ -6,6 +6,8 @@ const getUsersAndTeams = require("../routes/user/GetUserAndTeams");
 const updateUserField = require("../routes/user/UpdateUserField");
 const deleteUser = require("../routes/user/DeleteUser");
 
+const createTeam = require("../routes/team/CreateTeam");
+
 async function handler(request, response) {
 
     if(request.url.startsWith("/createUser") && request.method === "POST") {
@@ -31,9 +33,12 @@ async function handler(request, response) {
 
         }else if(request.url.startsWith("/deleteUser/") && request.method === "DELETE") {
             return deleteUser(request, response);
-        }
 
+        }else if(request.url.startsWith("/createTeam/") && request.method === "POST") {
+            return createTeam(request, response);
+        }
     }
+    
 }
 
 module.exports = handler;
