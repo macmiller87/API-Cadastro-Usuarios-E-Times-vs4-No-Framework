@@ -13,7 +13,7 @@ async function getTeam(request, response) {
 
     if(findUserById) {
 
-        const findByTeamId = findUserById.teams.find((item) => item.team_id === team_id);
+        const findByTeamId = await findUserById.teams.find((item) => item.team_id === team_id);
 
         if(findByTeamId) {
 
