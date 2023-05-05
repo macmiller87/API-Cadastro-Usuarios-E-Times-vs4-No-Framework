@@ -8,6 +8,7 @@ const deleteUser = require("../routes/user/DeleteUser");
 
 const createTeam = require("../routes/team/CreateTeam");
 const getTeam = require("../routes/team/GetTeam");
+const updateTeamField = require("../routes/team/UpdateTeamField");
 
 async function handler(request, response) {
 
@@ -26,7 +27,7 @@ async function handler(request, response) {
         if(request.url.startsWith("/getUser/") && request.method === "GET") {
             return await getUser(request, response);
 
-        }else if(request.url.startsWith("/getUsersAndTeams") && request.method === "GET") {
+        }else if(request.url.startsWith("/getUsersAndTeams/") && request.method === "GET") {
             return getUsersAndTeams(request, response);
 
         }else if(request.url.startsWith("/updateUserField/") && request.method === "PATCH") {
@@ -40,6 +41,9 @@ async function handler(request, response) {
 
         }else if(request.url.startsWith("/getTeam/") && request.method === "GET") {
             return getTeam(request, response);
+
+        }else if(request.url.startsWith("/updateTeamField/") && request.method === "PATCH") {
+            return updateTeamField(request, response);
         }
     }
     
