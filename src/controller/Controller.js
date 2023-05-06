@@ -9,6 +9,7 @@ const deleteUser = require("../routes/user/DeleteUser");
 const createTeam = require("../routes/team/CreateTeam");
 const getTeam = require("../routes/team/GetTeam");
 const updateTeamField = require("../routes/team/UpdateTeamField");
+const deleteTeam = require("../routes/team/DeleteTeam");
 
 async function handler(request, response) {
 
@@ -44,6 +45,9 @@ async function handler(request, response) {
 
         }else if(request.url.startsWith("/updateTeamField/") && request.method === "PATCH") {
             return updateTeamField(request, response);
+
+        }else if(request.url.startsWith("/deleteTeam/") && request.method === "DELETE") {
+            return deleteTeam(request, response);
         }
     }
     
